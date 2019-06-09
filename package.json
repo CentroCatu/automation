@@ -1,11 +1,23 @@
 {
   "name": "auto",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CentroCatu/automation.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/CentroCatu/automation/issues"
+  },
+  "homepage": "https://github.com/CentroCatu/automation#readme",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^3.3.1"
+  }
 }
