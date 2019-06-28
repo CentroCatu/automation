@@ -126,6 +126,7 @@ Hay muchas más cosas que se pueden hacer con los elementos. Para ver más ejemp
 
 
 # Hacer una comprobación
+![trampa](supervivenciaImages/trampa.png)
 ## Comprobar que un elemento tenga exactamente cierto texto
 
 De esta forma se puede comprobar que el titular diga `Menem  2020`
