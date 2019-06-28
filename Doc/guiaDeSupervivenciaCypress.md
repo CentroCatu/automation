@@ -1,5 +1,5 @@
 # Cypress - Guía de Supervivencia
-
+![supervivencia](instalarCypressImages/supervivencia.jpg)
 # Instalar Cypress
 [ver la página de instalación](https://github.com/CentroCatu/automation/blob/master/Doc/InstalarCypress.md )
 
@@ -63,6 +63,111 @@ describe('acciones de usuarios', function() {
 # El contenido de cada test
 En un test se hacen mayormente tres tipos de acciones:
 * seleccionar un elemento
-* interactuar con ese elemento ( hacer click, escribir, seleccionar)
-* comprobar que esté pasando lo deseado ( por ejemplo asegurarse que cuando toco el botón salir, la pantalla diga 'sesión cerrada')
+* interactuar con el elemento seleccionado( por ejemplo: hacer click, escribir)
+* comprobar que esté pasando lo que debería pasar ( por ejemplo asegurarse que cuando toco el botón 'cerrar sesión', la pantalla diga 'sesión cerrada')
 
+
+# Visitar una página
+
+``` javascript
+cy.visit('https://www.mercadolibre.com.ar')
+```
+
+# Seleccionar un elemento
+
+## Por texto
+Cuando queremos seleccionar un elemento que tiene un texto podemos usar `contains`.
+
+Por ejemplo, para apretar un botón que contenga `Cerrar``
+``` javascript
+ cy.contains('Cerrar')
+```
+
+Esto selecciona un elemento que contenga este texto. El botón puede tener más texto, pero si incluye ese texto va a ser seleccionado.
+
+Por ejemplo si hay un título que dice `Bienvenido Roberto ` la línea siguiente
+
+``` javascript
+ cy.contains('Bienvenido')
+ ```
+
+va a seleccionar ese título.
+
+Es muy importante que el texto esté tal cual como está en la página, respetando mayúsculas, puntos y otros detalles.
+
+Nota: 'contains' significa 'contiene' en inglés.
+
+
+Si hay mas de un elemento que tenga ese texto Cypress va a seleccionar el primero que contenga ese texto.
+
+## Usando el selector de Cypress
+Para usar el selector de Cypress hay que tocar el ícono del selector:
+![selector](./supervivenciaImages/selector.png)
+
+Hacer Click en el elemento que queremos seleccionar
+![elegir](./supervivenciaImages/seleccionar.png)
+
+Copiar el selector haciendo clicl en el boton copiar
+![copiar](supervivenciaImages/copiar.png) y pegarlo en el editor de código
+
+## Usando Css
+El selector de Cypress no es perfecto y a veces no va a seleccionar lo que ustedes quieren. En este caso van a tener que usar un selector css.
+
+Por ejemplo
+``` javascript
+cy.get('#cerrar')
+```
+va a seleccionar un elemento que tenga un `id` 'cerrar' por que el símbolo `#` significa `id`
+
+Este es un juego muy bueno para aprender más de selectores css: [Comedor CSS](http://cgosorio.es/DW/comedor-css/#)
+
+
+# Interactuar con un elemento
+
+## Click
+Una vez que seleccionaron el elemento pueden hacerle click de la manera siguiente
+``` javascript
+cy.contains('cerrar').click()
+```
+
+## Escribir
+``` javascript
+cy.get('#queja').type('No me gusta esta página')
+```
+
+Hay muchas más cosas que se pueden hacer con los elementos. Para ver más ejemplos pueden ver el archivo que está dentro de la carpeta `Cypress/integration/examples/actions.spec.js`
+
+
+# Hacer una comprobación
+## Comprobar que un elemento tenga exactamente un texto
+
+De esta forma se puede comprobar que el titular diga `Menem  2020`
+```javascript
+cy.get('.titular').should('have.text','Menem 2020')
+```
+La primera parte  `cy.get('#titular')` selecciona el elemento que tenga el `id` 'titular'.
+
+La segunda parte `should('have.text','Menem 2020')` comprueba que el titular diga exactamente 'Menem 2020'.
+
+En inglés la segunda parte se leería: debería tener texto 'Menem 2020'
+
+Si el texto tiene cualquier detalle diferente (por ejemplo una mayúscula) Cypress va a considerar que hay un error
+
+
+## Comprobar que un elemento contenga por lo menos un texto
+De esta forma podemos ver que un elemento **contenga** un texto.
+
+Si el elemento tiene más texto no importa, lo importante es que el texto tenga por lo menos lo que buscamos
+
+``` javascript
+cy.get('#titular').should('contain', '2020')
+```
+
+En inglés se lee
+cy buscar #titular debería contener 2020
+
+Hay muchas más comprobaciones que se pueden hacer. Hay más ejemplos en la carpeta `Cypress/integration/examples/assertions.spec.js `
+
+
+
+![salir](instalarCypressImages/salir.jpg)
