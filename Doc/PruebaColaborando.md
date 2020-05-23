@@ -1,1 +1,2 @@
-# requisitos para automation
+# Requisitos para automation
+# Instalar Cypress.
