@@ -11,7 +11,7 @@ describe('Funcionalidad quejas', function() {
       }
       cy.get(':nth-child(1) > :nth-child(4) > .icon-remove').click()
       cy.get(':nth-child(2) > :nth-child(4) > .icon-pencil').click()
-      cy.get('#contact-name').type('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+      cy.get('#contact-name').type('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
       cy.contains('Guardar').click()
       cy.get('.brand').should('have.text','Contactos ')
       cy.get('.help-inline').should('have.text','El nombre del contacto no puede superar los 35 caracteres')
