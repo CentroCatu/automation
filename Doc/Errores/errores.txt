@@ -1,0 +1,6 @@
+Mensaje de error
+CypressError: Typing into a date input with cy.type() requires a valid date with the format 'yyyy-MM-dd'. You passed: 02092001
+Intención 
+ Llenar un campo de fecha
+ Solucion
+Ingresar numeros con "yyyy-MM-dd" (año-mes-día)
