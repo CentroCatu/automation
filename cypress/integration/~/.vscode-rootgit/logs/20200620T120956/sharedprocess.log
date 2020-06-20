@@ -1,0 +1,2 @@
+[2020-06-20 12:10:03.865] [sharedprocess] [info] main {"machineId":"f7b0a4c9de5454768f3b8f23761f71cbcebf7acae0fdefac0e2fe5361d3391f1","windowId":2}
+[2020-06-20 12:10:04.875] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/carolina/automationCaro/automation/cypress/integration/~/.vscode-rootgit/User/snippets'
