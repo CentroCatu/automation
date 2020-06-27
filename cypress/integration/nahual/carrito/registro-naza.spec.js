@@ -18,7 +18,8 @@ describe('Funcionalidad de Registro', function() {
 
         cy.get('#registro-address').type('Siempre viva 123')
         cy.get('#registro-password').type('1233456')
-        cy.get('#registro-phone').type('3416123456')
+        cy.get('#registro-phone').type('273- _)( .')
+        cy.get('#registro-phone').should('have.value', '273- _)( .')
     })
 
     it('Completar formulario de registro y cancelar', function() {
@@ -30,7 +31,7 @@ describe('Funcionalidad de Registro', function() {
         cy.get('#registro-birthdate').type('2001-08-02')
         cy.get('#registro-address').type('Siempre viva 123')
         cy.get('#registro-password').type('1233456')
-        cy.get('#registro-phone').type('3416123456')
+        cy.get('#registro-phone').type('273- _)( .')
         cy.contains('Cancelar').click()
     })
 
