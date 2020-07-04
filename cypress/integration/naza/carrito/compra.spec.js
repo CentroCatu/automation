@@ -24,6 +24,17 @@ describe('CCC-25:Verificar campo costo total', function () {
 
   })
 
+  it(('Verificar el precio unitario de Manzana'), function () {
+
+    cy.visit('https://nahual-app-carrito.herokuapp.com/#/store')
+    cy.get('.ng-pristine').type('Manzana')
+    cy.get(':nth-child(4) > a').click()
+
+    cy.get('.ng-scope > .tdRight').should("contain", "$40.00 / Kg.")
+
+  })
+
+
 })
 
 
