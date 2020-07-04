@@ -21,7 +21,6 @@ describe('CCC-25:Verificar campo costo total', function () {
     cy.get(':nth-child(1) > .tdRight > a > :nth-child(3)').should("have.text", "$80.00")
     cy.get(':nth-child(3) > .tdRight > a > :nth-child(3)').should("have.text", "$80.00")
     cy.get('.ng-scope > .tdRight').should("contain", "$40.00 / Kg.")
-
   })
 
 })
