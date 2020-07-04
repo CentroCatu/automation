@@ -1,6 +1,9 @@
 /// <reference types="Cypress" />
 
-
+beforeEach(() => {
+  cy.visit ('https://nahual-app-carrito.herokuapp.com/#/cart')
+  cy.get ('.btn-danger').click() 
+})
 
 describe('CCC-4-Verificar busqueda con palabras en campo de texto', function () {
   it((''), function () {
@@ -26,4 +29,16 @@ describe('CCC-25:Verificar campo costo total', function () {
 })
 
 
+describe('CCC-30:Visualizar columnas Khamil', function () {
+  it((''), function () {
+
+    cy.visit('https://nahual-app-carrito.herokuapp.com/#/store')
+    cy.get('.ng-pristine').type('Banana')
+    cy.get(':nth-child(4) > a').click()
+    cy.get(':nth-child(1) > .tdRight > a').click()
+    cy.get(':nth-child(1) > :nth-child(1) > b').should('have.text', 'Producto')
+    cy.get(':nth-child(1) > .tdCenter > b').should('have.text', 'Cantidad')
+    cy.get(':nth-child(1) > .tdRight > b').should('have.text', 'Precio')
+  })
+})
 
