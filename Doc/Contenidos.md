@@ -48,7 +48,7 @@ Cual es la herramienta selector de Cypress (Selector Playground). Cómo utilizar
 # Chrome
 Cómo inspeccionar un elemento.
 
-# _________________________
+---
 
 # Página web
 Noción de Html y  Css
@@ -93,7 +93,7 @@ Que es un puerto. Cómo visitar una página corriendo un servidor local. Cómo i
 Por que se usa testear un servidor local.
 Que son los Environments ( Prod, Staging, Testing). Para que sirve cada uno
 
-# ____________________________
+---
 
 # Elementos de Metodología Agile
 Ticket. Ciclo de un ticket. Sprint.
