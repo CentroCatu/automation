@@ -42,7 +42,7 @@ describe('CCC-30:Visualizar columnas Khamil', function () {
   })
 })  
  
-describe.only('CCC-2l9:Boton vaciar carrito', function () {
+describe('CCC-2l9:Boton vaciar carrito', function () {
   it((''), function () {
 
     cy.visit('https://nahual-app-carrito.herokuapp.com/#/store')
