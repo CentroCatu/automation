@@ -12,3 +12,5 @@
 [0303/201137.813:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
 [0303/201137.930:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
 [0620/182059.320:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0704/140912.749:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0704/140918.857:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
