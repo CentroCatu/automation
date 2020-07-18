@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 /// <reference types="Cypress" />
+=======
+// <reference types="Cypress" />
+
+>>>>>>> c946f84382e925302f8b8409370f6461b7a1908e
 beforeEach(() => {
   cy.visit ('https://nahual-app-carrito.herokuapp.com/#/cart')
   cy.get ('.btn-danger').click() 
@@ -41,4 +46,27 @@ describe('CCC-30:Visualizar columnas Khamil', function () {
     cy.get(':nth-child(1) > .tdCenter > b').should('have.text', 'Cantidad')
     cy.get(':nth-child(1) > .tdRight > b').should('have.text', 'Precio')
   })
+<<<<<<< HEAD
 })
+=======
+})  
+ 
+describe('CCC-2l9:Boton vaciar carrito', function () {
+  it((''), function () {
+
+    cy.visit('https://nahual-app-carrito.herokuapp.com/#/store')
+    cy.get('.ng-pristine').type('Frutilla')
+    cy.get(':nth-child(4) > a').click()
+    cy.get(':nth-child(1) > .tdRight > a').click()
+    cy.get('tbody > .ng-scope > :nth-child(1)').should('have.text','Frutilla')
+    cy.get(':nth-child(4) > .tdCenter').should('have.text','1')
+    cy.get('.btn-danger').click() 
+    cy.get('[ng-hide="cart.getTotalCount() > 0"] > .tdCenter').should('contain.text','Carrito vacio.')
+    cy.get(':nth-child(3) > .tdCenter').should('have.text','0')
+    cy.get(':nth-child(3) > .tdRight').should('have.text','$0.00')
+    cy.get('tbody > .ng-scope > :nth-child(1)').should('not.exist')
+    
+  })
+})
+
+>>>>>>> c946f84382e925302f8b8409370f6461b7a1908e
