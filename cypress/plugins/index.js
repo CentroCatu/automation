@@ -18,7 +18,3 @@ module.exports = (on, config) => {
   config.ignoreTestFiles = "**/examples/*.spec.js";
   return config;
 }
-
-Cypress.on('uncaught:exception', () => {
-  return false;
-});
