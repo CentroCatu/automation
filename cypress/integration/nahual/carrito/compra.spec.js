@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 /// <reference types="Cypress" />
-=======
-// <reference types="Cypress" />
-
->>>>>>> c946f84382e925302f8b8409370f6461b7a1908e
 beforeEach(() => {
   cy.visit ('https://nahual-app-carrito.herokuapp.com/#/cart')
   cy.get ('.btn-danger').click() 
@@ -46,10 +41,7 @@ describe('CCC-30:Visualizar columnas Khamil', function () {
     cy.get(':nth-child(1) > .tdCenter > b').should('have.text', 'Cantidad')
     cy.get(':nth-child(1) > .tdRight > b').should('have.text', 'Precio')
   })
-<<<<<<< HEAD
-})
-=======
-})  
+}) 
  
 describe('CCC-2l9:Boton vaciar carrito', function () {
   it((''), function () {
@@ -68,5 +60,3 @@ describe('CCC-2l9:Boton vaciar carrito', function () {
     
   })
 })
-
->>>>>>> c946f84382e925302f8b8409370f6461b7a1908e
