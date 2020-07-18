@@ -14,4 +14,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          project: ./cypress/integration
+          project: ./automation/cypress/integration/naza
