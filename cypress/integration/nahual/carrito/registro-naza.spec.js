@@ -21,10 +21,10 @@ describe('Funcionalidad de Registro', function() {
         cy.get('#registro-phone').type('3416123456')
     })
 
-    it('Completar formulario de registro y cancelar', function() {
+    it.only('Completar formulario de registro y cancelar', function() {
         cy.visit('https://nahual-app-carrito.herokuapp.com/#/store')
         cy.get('[href="#/registro"]').click()
-        cy.get('#nombre').type('Anselmo')
+        cy.get('#nombre',{timeout:20000}).type('Anselmo')
         cy.get('#apellido').type('Valenzuela')
         cy.get('#registro-email').type('ansel@gmail.com')
         cy.get('#registro-birthdate').type('2001-08-02')
