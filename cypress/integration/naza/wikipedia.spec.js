@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 describe('Donaciones', function() {
     it('Selección de opción de donación', function() {
         cy.visit("donate.wikimedia.org")
