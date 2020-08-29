@@ -1,1 +1,0 @@
-Hola, vamo nosotro.
