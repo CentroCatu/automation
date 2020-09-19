@@ -1,93 +1,63 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
 <body>
-<div>
-    <a href="#">link 1</a>
-    <a href="#">link 2</a>
-    <h1>Una página cualquiera</h1>
-    <div>
-        <div>
-            <h2>Tema importante</h2>
-            <p>Bla bla bla</p>
-        </div>
-        <div>
-            <div>
-                <h2>Links</h2>
-            </div>
-            <div>
-                <p>Links varios</p>
-                <a href="#">link 1</a>
-            </div>
-            <div>
-                <a href="#">link 2</a>
-            </div>
-        </div>
-        <div>
-            <h2>Otros Contenidos</h2>
-            <div>
-                <p>Soy un contenido</p>
-            </div>
-            <div>
-                <p>Yo también</p>
-            </div>
-        </div>
+<h1>Página de prueba para Automatización</h1>
+<main>
+    <div class="menu">
+        <ul>
+            <a href="#principal" ><li class="item">Inicio</li></a>
+            <a href="#servicios" ><li class="item">Servicios</li></a>
+            <a href="#nosotros" ><li class="item">Quienes somos</li></a>
+            <a href="#contacto" ><li class="item">Contacto</li></a>
+        </ul>
     </div>
-    <div id='perros'>
-        <h2>Perros</h2>
-        <div class='perro'>
-            <div>
-                <div>
-                    <h3>Caniche</h3>
-                </div>
-                <p>soy un perro rata</p>
-                <div>
-                    <div>
-                        <span>Puntaje: </span><span class='puntaje'>4</span>
-                    </div>
-                </div>
-            </div>
+    <section id="principal">
+        <h1>Título principal de la página</h1>
+        <img src="http://lorempixel.com/600/200" alt="lorem">
+    </section>
+    <section  id="servicios">
+        <h1>Servicios</h1>
+        <div class="listado">
+            <ul>
+                <li><h3>testing manual</h3><p>Precio: $42342</p></li>
+                <li><h3>testing automatizado</h3><p>Precio: $42342</p></li>
+                <li><h3>páginas web</h3><p>Precio: $42342</p></li>
+            </ul>
         </div>
-        <div class='perro'>
-            <div>
-                <div>
-                    <div>
-                        <h3>Salchicha</h3>
-                    </div>
-                </div>
-                <p>soy la alegría de la vida</p>
-                <div>
-                    <div>
-                        <span>Puntaje: </span><span class='puntaje'>8</span>
-                        <span>Puntaje: </span><span class='puntaje'>10</span>
-                    </div>
-                </div>
+    </section>
+    <section  id="nosotros">
+        <h1>Quienes somos</h1>
+        <img src="http://lorempixel.com/400/200" alt="lorem">
+
+    </section>
+    <section id="contacto">
+        <h1>Contacto</h1>
+        <img src="http://lorempixel.com/500/100" alt="lorem">
+        <form action="">
+            <div class="form-group">
+                <label for="" class="correo">Correo</label>
+                <input type="email" name="correo" id="mail">
             </div>
-        </div>
-        <div class='perro'>
-            <div>
-                <div>
-                    <h3>Galgo</h3>
-                </div>
-                <p>soy un perro de campo</p>
-                <div>
-                    <div>
-                        <span>Puntaje: </span><span class='puntaje'>7</span>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="" class="correo">Mensaje</label>
+                <textarea name="mensaje" id="messagge" cols="30" rows="10"></textarea>
             </div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div>
-        <div><a href="#">Contacto</a></div>
-        <div><a href="">Mas</a></div>
-        <div><a href="#">link 1</a></div>
-        <div><a href="#">link 2</a></div>
-    </div>
-</div>
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+                <button type="reset">Enviar</button>
+            </div>
+        </form>
+
+    </section>
+</main>
+<footer>
+    <h2>Todos los redechos reservados obviamente al autor</h2>
+</footer>
 </body>
+</html>
