@@ -1,0 +1,12 @@
+function transferir (nombre) {
+    cy.get('#toPublishGives.custom-select').select('AlePan')
+    cy.get('#toPublishReceives.custom-select').select('SomeUser')
+    cy.get('#toPublishAmount.form-control').type('3')
+    
+}
+describe('Transferir', function () {
+    it('Transferir', function () {
+        cy.visit('https://alpa84.github.io/coin/?do_not_log')
+       
+    })
+})

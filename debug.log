@@ -11,3 +11,4 @@
 [0303/201137.813:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
 [0303/201137.813:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
 [0303/201137.930:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[1018/120155.064:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
