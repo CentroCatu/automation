@@ -5,23 +5,25 @@ function crearwallet(nombre) {
 }
 
 function checkwallet(nombre){
-    cy.get('.col-md-4').contains(nombre)
+    //cy.get('.col-md-4').contains(nombre)
+    cy.get('[data-tut="wallets"]').contains(nombre)
 }
 
 function transfer (giver, receiver, amount) {
-    cy.get('#toPublishGives.custom-select').select('giver')
-    cy.get('#toPublishReceives.custom-select').select('receiver')
-    cy.get('#toPublishAmount.form-control').type('amount')
+    cy.get('#toPublishGives').select(giver)
+    cy.get('#toPublishReceives').select(receiver)
+    cy.get('#toPublishAmount').type(amount)
     cy.get('#toPublishPass').type('65537,54334792063761474886297432039313727154330513618477202451099219546996291545379')
     cy.get('#toPublishSign').click()
+    cy.get('#toPublishPublish').click()
 }
-function  checktransfer() {
-    cy.get('[data-tut="notIncludedYet"] > .card > .card-body > .table > tbody > tr > td > div').contains(giver, receiver, amount)
+function  checktransfer(giver, receiver, amount) {
+        cy.get('[data-tut="notIncludedYet"]').find('[class="table inside fixedTable"]').contains(giver).contains(receiver).contains(amount)
 }
 
 
 describe('Billetera', function () {
-    it('Crear Billetera'), function() {
+    it('Crear Billetera', function() {
         cy.visit('https://alpa84.github.io/coin/?do_not_log')
         cy.get('[aria-label="Close"] > svg').click()
 
@@ -31,10 +33,10 @@ describe('Billetera', function () {
         checkwallet('Ale')
         crearwallet('Diego')
         checkwallet('Diego')    
-    }
+    })
     
     
-    it('Transferir', function (giver, receiver, amount) {
+    it('Transferir', function () {
         cy.visit('https://alpa84.github.io/coin/?do_not_log')
         cy.get('[aria-label="Close"] > svg').click()
         
