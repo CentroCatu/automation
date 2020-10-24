@@ -24,7 +24,6 @@ function transaccion (giver,receiver,cantidad) {
     cy.get('#toPublishAmount').type(cantidad)
     var privateKey = cy.get('[data-tut="wallets"]').contains(giver).closest('.card-body')
     .find('[data-tut="creatorPrivateKey"]').find('.longString')
-    console.log('alala', privateKey)
     cy.get('#toPublishPass').type(privateKey)
     cy.get('#toPublishSign').click()
     cy.get('#toPublishPublish').click()
