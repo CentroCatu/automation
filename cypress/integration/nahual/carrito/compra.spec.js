@@ -1,12 +1,11 @@
-// <reference types="Cypress" />
-
+/// <reference types="Cypress" />
 beforeEach(() => {
   cy.visit ('https://nahual-app-carrito.herokuapp.com/#/cart')
   cy.get ('.btn-danger').click() 
 })
 
 describe('CCC-4-Verificar busqueda con palabras en campo de texto', function () {
-  it((''), function () {
+  it(('Buscar Manzana'), function () {
 
     cy.visit('https://nahual-app-carrito.herokuapp.com/#/store')
     cy.get('.ng-pristine').type('Manzana')
@@ -16,18 +15,20 @@ describe('CCC-4-Verificar busqueda con palabras en campo de texto', function () 
 
 
 describe('CCC-25:Verificar campo costo total', function () {
-  it((''), function () {
+
+  it(('Verificar el precio al sumar 2 Manzanas'), function () {
 
     cy.visit('https://nahual-app-carrito.herokuapp.com/#/store')
     cy.get('.ng-pristine').type('Manzana')
     cy.get(':nth-child(4) > a').click()
     cy.get(':nth-child(4) > a').click()
-    cy.get(':nth-child(1) > .tdRight > a > :nth-child(3)').should('have.text', '$80.00')
-    cy.get(':nth-child(3) > .tdRight > a > :nth-child(3)').should('have.text', '$80.00')
-    cy.get('.ng-scope > .tdRight').should('contain', '$40.00 / Kg.')
-  })
-})
 
+    cy.get(':nth-child(1) > .tdRight > a > :nth-child(3)').should("have.text", "$80.00")
+    cy.get(':nth-child(3) > .tdRight > a > :nth-child(3)').should("have.text", "$80.00")
+    cy.get('.ng-scope > .tdRight').should("contain", "$40.00 / Kg.")
+  })
+
+})
 
 describe('CCC-30:Visualizar columnas Khamil', function () {
   it((''), function () {
@@ -40,7 +41,7 @@ describe('CCC-30:Visualizar columnas Khamil', function () {
     cy.get(':nth-child(1) > .tdCenter > b').should('have.text', 'Cantidad')
     cy.get(':nth-child(1) > .tdRight > b').should('have.text', 'Precio')
   })
-})  
+}) 
  
 describe('CCC-2l9:Boton vaciar carrito', function () {
   it((''), function () {
@@ -59,4 +60,3 @@ describe('CCC-2l9:Boton vaciar carrito', function () {
     
   })
 })
-
