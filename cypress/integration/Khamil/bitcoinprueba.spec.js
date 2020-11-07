@@ -18,7 +18,7 @@ describe('Billeteras', function () {
         verificarBilletera('Diego')
     })
 })
-function transaccion (giver,receiver,cantidad,clave) {
+function crearTransaccion(giver, receiver, cantidad, clave) {
     cy.get('#toPublishGives').select(giver)
     cy.get('#toPublishReceives').select(receiver)
     cy.get('#toPublishAmount').type(cantidad)
@@ -26,17 +26,17 @@ function transaccion (giver,receiver,cantidad,clave) {
     cy.get('#toPublishSign').click()
     cy.get('#toPublishPublish').click()
 }
-function comprobarTransaccion (giver,receiver,cantidad) {
+function comprobarTransaccion(giver, receiver, cantidad) {
     cy.get('[data-tut="notIncludedYet"]').find('[data-tut=""]').contains(receiver).contains(giver)
 }
-    it.only('Realizar Transacción', function () {
-        cy.visit('https://alpa84.github.io/coin/?do_not_log')
-        cy.get('[aria-label="Close"] > svg').click()
-        transaccion('AlePan', 'SomeUser', 3,'65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
-        transaccion('AlePan', 'Athena', 3,'65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
-        comprobarTransaccion('AlePan', 'SomeUser', 3)
-        comprobarTransaccion('AlePan', 'Athena', 3)
-    })
+it.only('Realizar Transacción', function () {
+    cy.visit('https://alpa84.github.io/coin/?do_not_log')
+    cy.get('[aria-label="Close"] > svg').click()
+    crearTransaccion('AlePan', 'SomeUser', 3, '65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
+    crearTransaccion('AlePan', 'Athena', 3, '65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
+    comprobarTransaccion('AlePan', 'SomeUser', 3)
+    comprobarTransaccion('AlePan', 'Athena', 3)
+})
 
 
 
