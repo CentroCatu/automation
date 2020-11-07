@@ -1,1 +1,17 @@
 Prueba
+Alejandro Panza
+11:59
+En la sección 'Transaction Generator':
+* elegir Giver: AlePan
+* elegir receiver: SomeUser
+* escribir amount: 3
+* Click en Sign
+* Click en Publish
+*Comprobar que se halla agregado algo en la sección 'Published Transactions not yet included in the Blockchain'
+______
+* elegir Giver: AlePan
+* elegir receiver: Athena
+* escribir amount: 3
+* Click en Sign
+* Click en Publish
+*Comprobar que se halla agregado algo en la sección 'Published Transactions not yet included in the Blockchain'
