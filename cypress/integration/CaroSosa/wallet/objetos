@@ -1,0 +1,18 @@
+var persona = {
+  nombre: "Anselmo",
+  apellido: "Valenzuela",
+  edad: 23,
+  presentarse:function(){
+    console.log("Hola, soy "+this.nombre+" "+this.apellido);
+}
+}
+forma de resolver el chequeo de billetera de naza, hecho con objetos
+function verificarBilletera(giver, reciver, amount){
+    //cy.get('[data-tut="notIncludedYet"]').contains(giver).should('be.visible')
+    cy.get('[data-tut="notIncludedYet"]').contains(giver).should("contain", reciver + " $: " + amount )
+}
+
+beforeEach(() => {        
+        cy.visit('https://alpa84.github.io/coin/?do_not_log')
+        cy.get("[aria-label='Close']").click()
+    })
