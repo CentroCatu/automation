@@ -1,0 +1,19 @@
+body{
+    background-color: #b7b7f3;
+}
+.menu ul {
+    display: flex;
+}
+.menu ul a li{
+    list-style:none;
+    margin: 10px;
+}
+
+section {
+    margin: 20px;
+    box-shadow: 1px 2px 5px black;
+    padding: 20px;
+}
+.form-group {
+    width: 800px;
+}
