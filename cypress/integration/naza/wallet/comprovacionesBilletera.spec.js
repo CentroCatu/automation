@@ -26,7 +26,9 @@ describe('Funcionalidad de Billetera', function () {
         cy.get('#selectDirToAddMined').select('AlePan')
         cy.get('#startMining').click()
         //cy.wait(20000)
-        cy.contains("Block 3" , {timeout:25000}).closest('.blockTutorial')
+        //cy.contains("Block 3" , {timeout:25000}).closest('.blockTutorial')
+        //cy.get('.blockTutorial' , {timeout:25000}).should('have.length',3)
+        cy.get('.blockTutorial' , {timeout:25000}).should('contain',"Block 3")
     })
 })
 
