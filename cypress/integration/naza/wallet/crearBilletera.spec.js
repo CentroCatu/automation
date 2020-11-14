@@ -17,7 +17,6 @@ describe('Funcionalidad de Billetera', function () {
         verificarBilletera(nombres[0])
         verificarBilletera(nombres[1])
         verificarBilletera(nombres[2])
-
     })
 })
 

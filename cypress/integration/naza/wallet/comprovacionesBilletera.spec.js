@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 // node_modules/.bin/cypress open
-let nombres = [ 'Maxi', 'AlePan']
+let nombres = [ 'Maxi', 'AlePan', 'UserNuevo']
 describe('Funcionalidad de Billetera', function () {
     beforeEach(() => {        
         cy.visit('https://alpa84.github.io/coin/?do_not_log')
@@ -17,9 +17,34 @@ describe('Funcionalidad de Billetera', function () {
         completarDatos(nombres[1])
         verificarSiExisteAlias()
     })
+
+    it('Verificar que el cartel desaparezca 10s después', function () {        
+        crearBilleteraDe(nombres[2])
+    })
+
+    it.only('Agregado de bloque al minar y verificando luego de 25 segundos', function () {        
+        cy.get('#selectDirToAddMined').select('AlePan')
+        cy.get('#startMining').click()
+        //cy.wait(20000)
+        cy.contains("Block 3" , {timeout:25000}).closest('.blockTutorial')
+    })
 })
 
+
+
+
+
+
+
+
+
+
+
 function verificarBilletera(nombre){
+    cy.get('[data-tut="wallets"]').contains(nombre).should('be.visible')    
+}
+
+function verificarCartelLuegoDe10Segundos(){
     cy.get('[data-tut="wallets"]').contains(nombre).should('be.visible')    
 }
 
