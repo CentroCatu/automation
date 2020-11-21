@@ -60,6 +60,4 @@ dentro del `get` hay que seleccionar el selector y a eso agregarle `>option[valu
 
 Hola amigos, les hablo desde el planeta Tierra.
 
-Le va a tocar hacer el merge a Khamil
-
-modificando la linea 63 a ver que pasa
+Le va a tocar hacer el merge a Caro
