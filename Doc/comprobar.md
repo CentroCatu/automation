@@ -58,6 +58,8 @@ Funcionaría para el siguiente html:
 
 dentro del `get` hay que seleccionar el selector y a eso agregarle `>option[value="la_opcion"]` donde `la_opcion`sea el `value` de esa opción, no el texto.
 
-queda pendiente describir el comando await
+Hola amigos, les hablo desde el planeta Tierra.
+
+Le va a tocar hacer el merge a Khamil
 
 modificando la linea 63 a ver que pasa
