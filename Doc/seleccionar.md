@@ -60,3 +60,5 @@ cy.contains('.alerta','guardar')
 selecciona los elementos que contengan el texto `guardar` y tengan la clase `alerta`
 
 
+Hay que cambiar la seleccion
+
