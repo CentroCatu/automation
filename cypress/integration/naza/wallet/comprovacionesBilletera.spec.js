@@ -22,25 +22,16 @@ describe('Funcionalidad de Billetera', function () {
         crearBilleteraDe(nombres[2])
     })
 
-    it.only('Agregado de bloque al minar y verificando luego de 25 segundos', function () {        
+    it.only('Agregado de bloque al minar y verificando luego de 25 segundos', function () {
+        var tiempoDeEspera= {timeout:25000}        
         cy.get('#selectDirToAddMined').select('AlePan')
         cy.get('#startMining').click()
         //cy.wait(20000)
         //cy.contains("Block 3" , {timeout:25000}).closest('.blockTutorial')
         //cy.get('.blockTutorial' , {timeout:25000}).should('have.length',3)
-        cy.get('.blockTutorial' , {timeout:25000}).should('contain',"Block 3")
+        cy.get('.blockTutorial' , tiempoDeEspera).should('contain',"Block 3")
     })
 })
-
-
-
-
-
-
-
-
-
-
 
 function verificarBilletera(nombre){
     cy.get('[data-tut="wallets"]').contains(nombre).should('be.visible')    
