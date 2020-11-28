@@ -9,16 +9,16 @@ function checkwallet(nombre){
     cy.get('[data-tut="wallets"]').contains(nombre)
 }
 
-function transfer (giver, receiver, amount) {
+function transfer (giver, receiver, amount, privatekey) {
     cy.get('#toPublishGives').select(giver)
     cy.get('#toPublishReceives').select(receiver)
     cy.get('#toPublishAmount').type(amount)
-    cy.get('#toPublishPass').type('65537,54334792063761474886297432039313727154330513618477202451099219546996291545379')
+    cy.get('#toPublishPass').type(privatekey)
     cy.get('#toPublishSign').click()
     cy.get('#toPublishPublish').click()
 }
-function  checktransfer(giver, receiver, amount) {
-        cy.get('[data-tut="notIncludedYet"]').find('[class="table inside fixedTable"]').contains(giver).contains(receiver).contains(amount)
+function  checktransfer(giver, receiver, numeroOrdenTransfer) {
+        cy.get('[data-tut="notIncludedYet"]').find('[class="table inside fixedTable"]>tbody>tr:nth-child('+numeroOrdenTransfer+')').should('have.text', 'AlePan    SomeUser $: 3signature: 7920637614758232529373139557542613364308016725171319737412521317535107927227')
 }
 
 
@@ -36,15 +36,17 @@ describe('Billetera', function () {
     })
     
     
-    it('Transferir', function () {
+    it.only('Transferir', function () {
         cy.visit('https://alpa84.github.io/coin/?do_not_log')
         cy.get('[aria-label="Close"] > svg').click()
         
-        transfer('AlePan','SomeUser', 3)
-        checktransfer('AlePan','SomeUser', 3)
+        transfer('AlePan','SomeUser', 3, '65537,54334792063761474886297432039313727154330513618477202451099219546996291545379')
+        transfer('AlePan', 'Athena', 3, '65537,54334792063761474886297432039313727154330513618477202451099219546996291545379')
         
-        transfer('AlePan', 'Athena', 3)
-        checktransfer('AlePan', 'Athena', 3)
+        checktransfer('AlePan','SomeUser', 2)
+        
+        
+        checktransfer('AlePan', 'Athena', 1)
        
     })
 })

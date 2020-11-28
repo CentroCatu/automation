@@ -5,4 +5,5 @@ describe("buscando", function () {
         //cy.contains('Servicios').parent().contains("Testing Manual")
         cy.contains('Servicios').parent().contains("Paginas Web").parent().contains("Precio")
     })
+
 })

@@ -9,14 +9,14 @@ function comprobar(nombre) {
     cy.get('[data-tut="wallets"]').contains(nombre)
 }
 
-function transacciones(dador, receptor, cantidad, privateKey) {
+function crearTransaccion(dador, receptor, cantidad, privateKey) {
     cy.get('#toPublishGives').select(dador)
     cy.get('#toPublishReceives').select(receptor)
     cy.get('#toPublishAmount').type(cantidad)
     cy.get('#toPublishPass').type(privateKey)
     cy.get('#toPublishSign').click()
     cy.get('#toPublishPublish').click()
-    cy.get('[data-tut="notIncludedYet"]').contains(dador)
+    cy.get('[data-tut="notIncludedYet"]').contains(receptor)
 
 }
 
@@ -37,16 +37,9 @@ describe('Billeteras', function () {
 
     })
     it.only(('Transacciones'), function () {
-        /*cy.get('#toPublishGives').select('AlePan')
-        cy.get('#toPublishReceives').select('SomeUser')
-        cy.get('#toPublishAmount').type('3')
-        cy.get('#toPublishPass').type('65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
-        cy.get('#toPublishSign').click()
-        cy.get('#toPublishPublish').click()
-        cy.get('[data-tut="notIncludedYet"]').contains('AlePan')*/
 
-        transacciones ('AlePan','SomeUser', '3','65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
-        transacciones ('AlePan', 'Athena', '5', '65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
+        crearTransaccion('AlePan', 'SomeUser', '3', '65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
+        crearTransaccion('AlePan', 'Athena', '5', '65537,32738739318480270880847344601765335773851669760144296954546538700397943059327')
 
     })
 })
