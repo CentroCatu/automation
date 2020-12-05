@@ -36,7 +36,10 @@ function transaccion (giver,receiver,cantidad) {
        transaccion('AlePan', 'SomeUser', 3)
 
     })
-
+//    ^..^      /
+//    /_/\_____/
+//     /\   /\
+//    /  \ /  \
 
 
 
