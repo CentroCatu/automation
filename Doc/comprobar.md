@@ -58,4 +58,3 @@ Funcionaría para el siguiente html:
 
 dentro del `get` hay que seleccionar el selector y a eso agregarle `>option[value="la_opcion"]` donde `la_opcion`sea el `value` de esa opción, no el texto.
 
-Queda pendiente el tema TimeOut.
