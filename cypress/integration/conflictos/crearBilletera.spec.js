@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-
+// https://docs.cypress.io/guides/core-concepts/conditional-testing.html#The-DOM-is-unstable
 // node_modules/.bin/cypress open
 describe('Funcionalidad de Billetera', function () {
     beforeEach(() => {        
@@ -14,14 +14,46 @@ describe('Funcionalidad de Billetera', function () {
         // crearBilleteraDe(nombres[2])
         crearVariasBilleteras(nombres)
        
-        verificarBilletera(nombres[0])
-        verificarBilletera(nombres[1])
-        verificarBilletera(nombres[2])
+        verificarBilleteraDe(nombres[0])
+        verificarBilleteraDe(nombres[1])
+        verificarBilleteraDe(nombres[2])
+    })
+
+    it('Existe el nombre ingresado?', function () {
+        let nombre = [ 'AlePan']
+        cy.get('[data-tut="wallets"]').then(($wallets) => {
+            if ($wallets.text().includes(nombre[0])) {
+                verificarBilleteraDe(nombre[0])
+            } else {
+                verificarNoExisteBilleteraDe(nombre[0])
+            }
+          })
+    })
+
+    it.only('Creación de Billetera si no Existe el nombre ingresado', function () {
+        let nombre = ['Maxi']
+        cy.get('[data-tut="wallets"]').then(($wallets) => {
+            if ($wallets.text().includes(nombre[0])) {
+                verificarBilleteraDe(nombre[0])
+            } else {
+                verificarNoExisteBilleteraDe(nombre[0])
+                crearBilleteraDe(nombre[0])
+            }
+          })
     })
 })
 
-function verificarBilletera(nombre){
+function verificarBilleteraDe(nombre){
     cy.get('[data-tut="wallets"]').contains(nombre).should('be.visible')
+}
+
+function verificarNoExisteBilleteraDe(nombre){
+    cy.get('[data-tut="wallets"]').contains(nombre).should('not.be.visible')
+}
+
+function crearBilleteraSiNoExtiste(nombre){
+    console.log(cy.get('[data-tut="wallets"]').contains(nombre).should('be.visible'))
+    
 }
 
 function crearBilleteraDe(nombre) {
