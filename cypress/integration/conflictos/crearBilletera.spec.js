@@ -6,7 +6,6 @@ describe('Funcionalidad de Billetera', function () {
         cy.visit('https://alpa84.github.io/coin/?do_not_log')
         cy.get("[aria-label='Close']").click()
     })
-
     it('Creación de Billetera', function () {
         let nombres = [ 'Maxi', 'Ale', 'Diego']
         // crearBilleteraDe(nombres[0])
@@ -40,6 +39,18 @@ describe('Funcionalidad de Billetera', function () {
                 crearBilleteraDe(nombre[0])
             }
           })
+    })
+    it('Verificación del campo alias', function () {
+        cy.get('#generateWallet').should('be.disabled')
+        cy.get('#generateKeys').click()
+        cy.get('#alias').type(' ')
+        cy.get('#generateWallet').should('be.disabled')
+    })
+    it('Verificación creacion de usuario con alias vacio', function () {  
+        cy.get('#generateKeys').click()
+        cy.get('#alias').type(' ')
+        cy.get('#generateWallet').click()
+        cy.get('[class="card elementFlash"]').find('[class="card-title"]').should('not.have.text', ' ')
     })
 })
 
