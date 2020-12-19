@@ -12,3 +12,20 @@ var nuevoMundo = mundo.map(function(celda, numCelda){
     }
 })
 console.log(nuevoMundo);
+
+document.onkeydown = function (e) {
+     
+    if (e.key == "ArrowUp") {
+        
+        posicion = posicion + 1;
+
+    } else {
+
+        posicion = posicion - 1;
+
+    }
+
+
+    console.log(posicion);
+    console.log(e.key)
+  } ;
