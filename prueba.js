@@ -1,4 +1,4 @@
-var mundo=["M"," "," ","S"," "," "," "," ","H"," "," "," ","Y"," "," "];
+var mundo=["🚗"," "," "," "," "," "," "," ","🚗"," "," "," ","🚗","🚗"," "];
 var posicion = 3;
 console.log(mundo);
 var personaje = "😜";
@@ -28,7 +28,10 @@ document.onkeydown = function (e) {
                 
             }
         })
-
+        if (mundo[posicion]=="🚗") {
+            console.log('PUM!')
+            personaje='👼'
+        }
         console.log(nuevoMundo)
 
     },50)
