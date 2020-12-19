@@ -17,9 +17,10 @@ document.onkeydown = function (e) {
 
   } ;
 
+    var nuevoMundo = [];
     setInterval(function(){
         
-        var nuevoMundo = mundo.map(function(celda, numCelda){
+        var nuevoNuevoMundo = mundo.map(function(celda, numCelda){
             if (posicion == numCelda) {
                 return personaje
                 
@@ -28,10 +29,19 @@ document.onkeydown = function (e) {
                 
             }
         })
-        if (mundo[posicion]=="🚗") {
-            console.log('PUM!')
-            personaje='👼'
+
+        if (JSON.stringify(nuevoMundo) !== JSON.stringify(nuevoNuevoMundo)) {
+            console.clear(); 
+            
+            console.log(nuevoNuevoMundo)
+            nuevoMundo = nuevoNuevoMundo;
+
+            if (mundo[posicion]=="🚗") {
+                console.log('PUM!')
+                personaje='👼'
+            } else {
+                personaje='😜'
+            }
         }
-        console.log(nuevoMundo)
 
     },50)
