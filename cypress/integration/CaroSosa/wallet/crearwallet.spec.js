@@ -1,7 +1,7 @@
 function crearWallet(nombre) {
     cy.get('#generateKeys').click()
     cy.get('#alias').type(nombre)
-    cy.get('class="alert alert-danger').should('not.exist')
+    cy.get('class="alert alert-danger"').should('not.exist')
     cy.get('#generateWallet').click()
 }
 
