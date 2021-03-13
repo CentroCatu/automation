@@ -1,3 +1,4 @@
+# Casos de Prueba - Colegio de Psicologos
 * Abrir la página, situarnos sobre el buscador de localidades y comprobar que 
 aparezca un listado de localidades.
 * Al seleccionar una localidad, debe aparecer un listado abajo 
